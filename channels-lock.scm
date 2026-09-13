@@ -1,8 +1,18 @@
 (list (channel
+       (name 'nonguix)
+       (url "https://gitlab.com/nonguix/nonguix")
+       (branch "master")
+       (commit "9c12527823e2895c05651cc30e3816c318239de9")
+       (introduction
+        (make-channel-introduction
+         "897c1a470da759236cc11798f4e0a5f7d4d59fbc"
+         (openpgp-fingerprint
+          "2A39 3FFF 68F4 EF7A 3D29  12AF 6F51 20A0 22FB B2D5"))))
+      (channel
        (name 'guix)
        (url "https://git.guix.gnu.org/guix.git")
        (branch "master")
-       (commit "d4c93bc1c373776b671ae5a940e2272c2a6f58fa")
+       (commit "9dcd1ef86af09a945c52ff09fd10a0cd46306720")
        (introduction
         (make-channel-introduction
          "9edb3f66fd807b096b48283debdcddccfea34bad"
