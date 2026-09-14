@@ -7,6 +7,9 @@
 			 (gnu packages gnupg)
 			 (guix gexp))
 
+(define gpg-cache-ttl
+  (* 400 24 60 60))
+
 (home-environment
  (packages
   (specifications->packages
@@ -24,6 +27,11 @@
 	'user-environment
 	home-environment-variables-service-type
 	'(("PATH" . "$HOME/.local/bin:$HOME/bin:$PATH")))
+
+   (simple-service
+	'git-config
+	home-files-service-type
+	`((".gitconfig" ,(local-file "files/git/config"))))
    
    (service
 	home-bash-service-type
@@ -48,9 +56,9 @@ gpg-connect-agent updatestartuptty /bye >/dev/null 2>&1
 	 (ssh-support? #t)
 	 (pinentry-program
 	  (file-append pinentry-gnome3 "/bin/pinentry-gnome3"))
-	 (default-cache-ttl 34560000)
-	 (default-cache-ttl-ssh 34560000)
-	 (max-cache-ttl 34560000)
-	 (max-cache-ttl-ssh 34560000)
+	 (default-cache-ttl gpg-cache-ttl)
+	 (default-cache-ttl-ssh gpg-cache-ttl)
+	 (max-cache-ttl gpg-cache-ttl)
+	 (max-cache-ttl-ssh gpg-cache-ttl)
 	 (extra-content
 	  "allow-emacs-pinentry\n"))))))
