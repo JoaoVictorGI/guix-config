@@ -18,7 +18,8 @@
 	"ripgrep"
 	"fd"
 	"jq"
-	"tree")))
+	"tree"
+	"glibc-locales")))
 
  (services
   (list
@@ -40,15 +41,7 @@
 	 (aliases
 	  '(("l" . "ls -l")
 		("la" . "ls -lAh --group-directories-first --color=auto")
-		("ls" . "ls -h --group-directories-first --color=auto")))
-	 (bashrc
-	  (list
-	   (plain-file
-		"gpg-terminal"
-		"\
-export GPG_TTY=$(tty)
-gpg-connect-agent updatestartuptty /bye >/dev/null 2>&1
-")))))
+		("ls" . "ls -h --group-directories-first --color=auto")))))
    
    (service
 	home-gpg-agent-service-type
