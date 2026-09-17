@@ -5,14 +5,17 @@
 			 (gnu home services shells)
 			 (gnu home services gnupg)
 			 (gnu packages gnupg)
-			 (guix gexp))
+			 (guix gexp)
+			 (intellij-idea))
 
 (define gpg-cache-ttl
   (* 400 24 60 60))
 
 (home-environment
  (packages
-  (specifications->packages
+  (append
+   (list intellij-idea)
+   (specifications->packages
    (list
 	"git"
 	"ripgrep"
@@ -38,7 +41,7 @@
 	"emacs-lsp-mode"
 	"emacs-lsp-java"
 	"emacs-dap-mode"
-	"tree-sitter-java")))
+	"tree-sitter-java"))))
 
  (services
   (list
