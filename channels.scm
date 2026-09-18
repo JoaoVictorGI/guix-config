@@ -1,7 +1,8 @@
 (cons*
  (channel
   (name 'my-packages)
-  (url "https://github.com/JoaoVictorGI/guix-config"))
+  (url "https://github.com/JoaoVictorGI/guix-config")
+  (branch "main"))
 
  (channel
   (name 'nonguix)
