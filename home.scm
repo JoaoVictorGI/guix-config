@@ -5,16 +5,13 @@
 			 (gnu home services shells)
 			 (gnu home services gnupg)
 			 (gnu packages gnupg)
-			 (guix gexp)
-			 (intellij-idea))
+			 (guix gexp))
 
 (define gpg-cache-ttl
   (* 400 24 60 60))
 
 (home-environment
  (packages
-  (append
-   (list intellij-idea)
    (specifications->packages
    (list
 	"git"
@@ -24,6 +21,7 @@
 	"tree"
 	"plantuml"
 	"glibc-locales"
+	"jetbrains-toolbox"
 
 	;; Emacs
 	"emacs-pgtk"
@@ -41,7 +39,7 @@
 	"emacs-lsp-mode"
 	"emacs-lsp-java"
 	"emacs-dap-mode"
-	"tree-sitter-java"))))
+	"tree-sitter-java")))
 
  (services
   (list

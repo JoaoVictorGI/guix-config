@@ -3,7 +3,18 @@
   (name 'my-packages)
   (url "https://github.com/JoaoVictorGI/guix-config")
   (branch "main"))
-
+ 
+ (channel
+  (name 'small-guix)
+  (url "https://codeberg.org/fishinthecalculator/small-guix.git")
+  (branch "main")
+  ;; Enable signature verification:
+  (introduction
+   (make-channel-introduction
+    "f260da13666cd41ae3202270784e61e062a3999c"
+    (openpgp-fingerprint
+     "8D10 60B9 6BB8 292E 829B  7249 AED4 1CC1 93B7 01E2"))))
+ 
  (channel
   (name 'nonguix)
   (url "https://gitlab.com/nonguix/nonguix")

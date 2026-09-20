@@ -1,8 +1,24 @@
 (list (channel
+	   (name 'my-packages)
+	   (url "https://github.com/JoaoVictorGI/guix-config")
+	   (branch "main")
+	   (commit "f808db7d9b5e75e8f8dc050f648bc536fd9c921d"))
+
+	  (channel
+       (name 'small-guix)
+       (url "https://codeberg.org/fishinthecalculator/small-guix.git")
+       (branch "main")
+       (commit "f530475baadea12f15c34a21f94cf3c1c8bb46c3")
+       (introduction
+        (make-channel-introduction
+         "f260da13666cd41ae3202270784e61e062a3999c"
+         (openpgp-fingerprint
+          "8D10 60B9 6BB8 292E 829B  7249 AED4 1CC1 93B7 01E2"))))
+      (channel
        (name 'nonguix)
        (url "https://gitlab.com/nonguix/nonguix")
        (branch "master")
-       (commit "9c12527823e2895c05651cc30e3816c318239de9")
+       (commit "f9171dd0d0a58d63c0811d61e51493a3fa4ae4f3")
        (introduction
         (make-channel-introduction
          "897c1a470da759236cc11798f4e0a5f7d4d59fbc"
@@ -12,9 +28,29 @@
        (name 'guix)
        (url "https://git.guix.gnu.org/guix.git")
        (branch "master")
-       (commit "9dcd1ef86af09a945c52ff09fd10a0cd46306720")
+       (commit "e0fe2626060a8cd45cf93a2c2daaf4e19bf6c0fd")
        (introduction
         (make-channel-introduction
          "9edb3f66fd807b096b48283debdcddccfea34bad"
          (openpgp-fingerprint
-          "BBB0 2DDF 2CEA F6A8 0D1D  E643 A2A0 6DF2 A33A 54FA")))))
+          "BBB0 2DDF 2CEA F6A8 0D1D  E643 A2A0 6DF2 A33A 54FA"))))
+      (channel
+       (name 'gocix)
+       (url "https://github.com/fishinthecalculator/gocix")
+       (branch "main")
+       (commit "5cbc7d0cb911dd27eb364d350ac5a1ef43308316")
+       (introduction
+        (make-channel-introduction
+         "cdb78996334c4f63304ecce224e95bb96bfd4c7d"
+         (openpgp-fingerprint
+          "8D10 60B9 6BB8 292E 829B  7249 AED4 1CC1 93B7 01E2"))))
+      (channel
+       (name 'sops-guix)
+       (url "https://github.com/fishinthecalculator/sops-guix")
+       (branch "main")
+       (commit "c53e27e533836ea8595626ba6796dee5362f8c4a")
+       (introduction
+        (make-channel-introduction
+         "0bbaf1fdd25266c7df790f65640aaa01e6d2dbc9"
+         (openpgp-fingerprint
+          "8D10 60B9 6BB8 292E 829B  7249 AED4 1CC1 93B7 01E2")))))
