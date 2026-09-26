@@ -10,21 +10,28 @@
 (define gpg-cache-ttl
   (* 400 24 60 60))
 
-(home-environment
- (packages
-   (specifications->packages
-   (list
-	"git"
-	"ripgrep"
+(define development
+  '("git"
+	"plantuml"
+	"jetbrains-toolbox"
+	"guile"))
+
+(define fonts
+  '("font-iosevka"
+	"font-awesome"
+	"font-nerd-jetbrains-mono"))
+
+(define clis
+  '("ripgrep"
 	"fd"
 	"jq"
 	"tree"
-	"plantuml"
-	"glibc-locales"
-	"jetbrains-toolbox"
+	"htop"
+	"ffmpeg"
+	"qobine"))
 
-	;; Emacs
-	"emacs-pgtk"
+(define emacs
+  '("emacs-pgtk"
 	"emacs-golden-ratio"
 	"emacs-vundo"
 	"emacs-vertico"
@@ -39,7 +46,29 @@
 	"emacs-lsp-mode"
 	"emacs-lsp-java"
 	"emacs-dap-mode"
-	"tree-sitter-java")))
+	"tree-sitter-java"
+	"emacs-geiser"
+	"emacs-geiser-guile"))
+
+(define desktop-common
+  '("librewolf"
+	"sioyek"
+	"libreoffice"
+	"foot"))
+
+(define misc
+  '("glibc-locales"))
+
+(home-environment
+ (packages
+  (specifications->packages
+   (append
+	development
+	fonts
+	clis
+	emacs
+	desktop-common
+	misc)))
 
  (services
   (list
